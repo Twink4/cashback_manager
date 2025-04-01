@@ -12,3 +12,5 @@ class Settings(BaseSettings):
         
 settings = Settings()
 
+DATABASE_URL = ""
+
