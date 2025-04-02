@@ -12,5 +12,5 @@ class Settings(BaseSettings):
         
 settings = Settings()
 
-DATABASE_URL = ""
+DATABASE_URL = f"postgresql+asyncpg://{settings.DB_USER}:{settings.DB_PASS}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
 
