@@ -2,13 +2,13 @@ import uvicorn
 
 from fastapi import FastAPI
 
-from backend.banks.router import router as banks_routers
+from backend.banks.routes import router as banks_routes
 
 app = FastAPI(
     title="Cashback Manager"
 )
 
-app.include_router(banks_routers)
+app.include_router(banks_routes)
 
 if __name__ == "__main__":
     uvicorn.run(
