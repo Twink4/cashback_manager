@@ -6,9 +6,10 @@ from sqlalchemy import pool
 from alembic import context
 from backend.core.database import Base, DATABASE_URL
 
+from backend.mccs.models import MccCodes
+
 from backend.banks.models import (
     Banks,
-    MccCodes,
     CashbackCategory,
     CashbackCategoryWithBank
 )
