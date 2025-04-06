@@ -4,5 +4,5 @@ from typing import Annotated
 
 
 class SMccCodeSet(BaseModel):
-    id: Annotated[int, Field(ge=4, gt=4)]
+    mcc_code: Annotated[str, Field(min_length=4, max_length=4, pattern=r"^\d{4}$")]
     base_cashback_category_id: int
