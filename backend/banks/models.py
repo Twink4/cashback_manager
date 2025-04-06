@@ -15,14 +15,6 @@ class Banks(Base):
     name = Column(String, nullable=False, unique=True)
 
 
-class MccCodes(Base):
-    __tablename__ = "mcc_codes"
-
-    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
-    base_cashback_category_id = Column(
-        ForeignKey("cashback_category.id"), nullable=False)
-
-
 class CashbackCategory(Base):
     __tablename__ = "cashback_category"
 
