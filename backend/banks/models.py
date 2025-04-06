@@ -15,6 +15,14 @@ class Banks(Base):
     name = Column(String, nullable=False, unique=True)
 
 
+class MccCodes(Base):
+    __tablename__ = "mcc_codes"
+
+    id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
+    base_cashback_category_id = Column(
+        ForeignKey("cashback_category.id"), nullable=False)
+
+
 class CashbackCategory(Base):
     __tablename__ = "cashback_category"
 
@@ -27,6 +35,6 @@ class CashbackCategoryWithBank(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     bank_id = Column(ForeignKey("banks.id"), nullable=False)
-    mcc_code = Column(Integer, nullable=False)
+    mcc_code = Column(ForeignKey("mcc_codes.id"), nullable=False)
     cashback_category_id = Column(ForeignKey(
         "cashback_category.id"), nullable=False)

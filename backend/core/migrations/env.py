@@ -8,6 +8,7 @@ from backend.core.database import Base, DATABASE_URL
 
 from backend.banks.models import (
     Banks,
+    MccCodes,
     CashbackCategory,
     CashbackCategoryWithBank
 )
