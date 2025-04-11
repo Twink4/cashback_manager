@@ -4,7 +4,7 @@ from fastapi import FastAPI
 
 from backend.banks.routers import router as banks_routers
 from backend.mccs.routers import router as mccs_routers
-from backend.mccs.routers import router as cashback_category_routers
+from backend.cashback_categories.routers import router as cashback_category_routers
 
 app = FastAPI(
     title="Cashback Manager"
